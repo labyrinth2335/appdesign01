@@ -32,14 +32,14 @@
         <!-- HERO SECTION -->
         <div class="hero">
             <h1>วิธีเดินทางไป One Bangkok</h1>
-            <button class="btn btn-gold" onclick="toggleImage('img-main-map')">แผนที่ภาพรวม (Site Map)</button>
+            <button class="btn btn-gold" onclick="toggleImage('img-main-map')">แผนที่ภาพรวม</button>
             
             <!-- กล่องแสดงรูปใต้หัวข้อ -->
             <div id="img-main-map" class="image-panel">
-                <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่รวมที่นี่ ]</div>
-                <!-- <img src="images/main-map.jpg" alt="Main Map" class="panel-img"> -->
+                <div class="panel-inner">
+                    <img src="Overview_map.webp" alt="Main Map" class="panel-img">
+                </div>
             </div>
-        </div>
 
         <div class="container">
             
@@ -53,9 +53,10 @@
                     <button class="btn" onclick="toggleImage('img-mrt-map')">ดูแผนที่สถานี MRT</button>
                     
                     <div id="img-mrt-map" class="image-panel">
-                        <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่สถานี MRT ที่นี่ ]</div>
+                        <div class="panel-inner">
+                            <img src="MRT_map.png" alt="MRT Map" class="panel-img">
+                        </div>
                     </div>
-                </div>
             </section>
 
             <!-- BTS SECTION -->
@@ -74,13 +75,15 @@
                     <button class="btn" onclick="toggleImage('img-bts-shuttle-flow')">ดูจุดรับส่ง Shuttle EV </button>
                     
                     <div id="img-bts-map" class="image-panel">
-                        <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่สถานี BTS ที่นี่ ]</div>
-                    </div>
+                        <div id="img-bts-map" class="image-panel">
+                            <div class="panel-inner">
+                                <img src="BTS_map.png" alt="BTS Map" class="panel-img">
+                            </div>
+                        </div>
                     
                     <div id="img-bts-shuttle-flow" class="image-panel">
-                        <div class="image-group">
-                            <div class="placeholder-text">[ 📸 รูปป้ายหน้ามหาทุนพลาซ่า (จุดรอรถ EV) ]</div>
-                            <div class="placeholder-text" style="margin-top: 10px;">[ 📸 รูปสิ้นสุดที่ One Bangkok ชั้น G The Storey ]</div>
+                        <div class="panel-inner">
+                            <img src="EV_dropoff.webp" alt="EV Dropoff" class="panel-img">
                         </div>
                     </div>
                 </div>
@@ -96,9 +99,10 @@
                     <button class="btn" onclick="toggleImage('img-bus-stop')">ดูจุด bus stop</button>
                     
                     <div id="img-bus-stop" class="image-panel">
-                        <div class="placeholder-text">[ 📸 วางลิงก์รูปจุดจอดรถเมล์ที่นี่ ]</div>
+                        <div class="panel-inner">
+                            <img src="Bus_stop.webp" alt="Bus Stop" class="panel-img">
+                        </div>
                     </div>
-                </div>
             </section>
 
             <!-- PERSONAL CAR SECTION -->
@@ -111,9 +115,10 @@
                     <a href="https://maps.google.com/?q=One+Bangkok" target="_blank" class="btn btn-gold">link to google map</a>
                     
                     <div id="img-car-entrance" class="image-panel">
-                        <div class="placeholder-text">[ 📸 วางลิงก์รูปภาพทางเข้าฝั่งถนนที่นี่ ]</div>
+                        <div class="panel-inner">
+                            <img src="Car_entrance.jpg" alt="Car Entrance" class="panel-img">
+                        </div>
                     </div>
-                </div>
             </section>
 
         </div>
