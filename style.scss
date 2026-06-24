@@ -1,0 +1,242 @@
+/* --- CSS RESET & BASE STYLES --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Prompt', sans-serif;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-main: #050a18;        /* น้ำเงินเข้มจัด โทนมืดเย็น */
+    --bg-card: #0d1527;        /* น้ำเงินเทาเข้มสำหรับกล่องเนื้อหา */
+    --bg-nav: rgba(5, 10, 24, 0.9);
+    --text-primary: #ffffff;   
+    --text-secondary: #a0aec0; 
+    --accent-blue: #38bdf8;    
+    --accent-gold: #fbbf24;    
+    --border-color: #1e293b;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* --- STICKY NAVIGATION BAR --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-nav);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border-color);
+    z-index: 1000;
+    padding: 15px 5%;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo-area a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.logo-area a:hover {
+    color: var(--accent-blue);
+}
+
+nav a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 0.95rem;
+    font-weight: 400;
+    transition: all 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-blue);
+}
+
+/* --- HERO BANNER --- */
+.hero {
+    padding: 160px 20px 80px 20px;
+    text-align: center;
+    background: linear-gradient(180deg, #0a1128 0%, var(--bg-main) 100%);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.hero h1 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.hero-subtitle {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 25px auto;
+    font-size: 1.1rem;
+}
+
+/* --- MAIN LAYOUT --- */
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+    border-left: 4px solid var(--accent-blue);
+    padding-left: 12px;
+}
+
+.card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+}
+
+.highlight {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* --- REUSABLE BUTTONS --- */
+.btn {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-blue);
+    border: 1px solid var(--accent-blue);
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.btn:hover {
+    background-color: var(--accent-blue);
+    color: var(--bg-main);
+}
+
+.btn-gold {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.btn-gold:hover {
+    background-color: var(--accent-gold);
+    color: var(--bg-main);
+}
+
+/* --- NEW NON-BLOCKING IMAGE PANEL (ACCORDION) --- */
+.image-panel {
+    display: none; /* ซ่อนไว้เริ่มต้น สลับสถานะด้วย JavaScript */
+    margin-top: 20px;
+    width: 100%;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.panel-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    object-fit: cover;
+}
+
+.image-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.placeholder-text {
+    padding: 40px 20px;
+    color: var(--text-secondary);
+    border: 2px dashed #2e3d52;
+    border-radius: 8px;
+    background-color: rgba(25, 35, 55, 0.4);
+    text-align: center;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: #02050d;
+    padding: 50px 20px;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+footer p {
+    margin-bottom: 8px;
+}
+
+footer a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.developer-credit {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #111827;
+    font-size: 0.8rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+    nav a {
+        margin: 0 8px;
+        font-size: 0.85rem;
+    }
+    .hero {
+        padding-top: 130px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}

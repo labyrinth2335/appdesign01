@@ -1,35 +1,136 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="th">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to go to One Bangkok</title>
+    <!-- Google Fonts: Prompt (Modern & Clean Sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+
+    <!-- STICKY HEADER & NAVIGATION -->
     <header>
-        <h1>Header</h1>
+        <div class="header-container">
+            <div class="logo-area">
+                <a href="#">Home</a>
+            </div>
+            <nav>
+                <a href="#mrt">MRT</a>
+                <a href="#bts">BTS & Suttle EV</a>
+                <a href="#bus">Public Bus</a>
+                <a href="#car">Personal Car</a>
+            </nav>
+        </div>
     </header>
-    <article>
-        <section>
-            <h2>Section 1</h2>
-            <ul>
-                <li>list item 1</li>
-                <li>list item 2</li>
-            </ul>
-        </section>
 
-        <section>
-            <h2>Section 2</h2>
-            <p>paragraph</p>
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <h1>วิธีเดินทางไป One Bangkok</h1>
+            <button class="btn btn-gold" onclick="toggleImage('img-main-map')">แผนที่ภาพรวม (Site Map)</button>
+            
+            <!-- กล่องแสดงรูปใต้หัวข้อ -->
+            <div id="img-main-map" class="image-panel">
+                <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่รวมที่นี่ ]</div>
+                <!-- <img src="images/main-map.jpg" alt="Main Map" class="panel-img"> -->
+            </div>
+        </div>
 
-            <p>
-                paragraph
-                <a href="https://www.google.com" target="_blank">link</a>
-            </p>
-        </section>
-    </article>
+        <div class="container">
+            
+            <!-- MRT SECTION -->
+            <section id="mrt">
+                <h2 class="section-title"> MRT</h2>
+                <div class="card">
+                    <p><span class="highlight">MRT สถานีลุมพินี ทางออก 1</span></p>
+                    <p>เดินทางด้วยรถไฟฟ้ามหานคร (MRT สายสีน้ำเงิน) ลงที่สถานีลุมพินี ใช้ทางออกที่ 1 จะมีทางเชื่อมต่อเข้าสู่ One Bangkok โดยตรงเลย</p>
+                    
+                    <button class="btn" onclick="toggleImage('img-mrt-map')">ดูแผนที่สถานี MRT</button>
+                    
+                    <div id="img-mrt-map" class="image-panel">
+                        <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่สถานี MRT ที่นี่ ]</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- BTS SECTION -->
+            <section id="bts">
+                <h2 class="section-title">BTS ต่อด้วย Suttle EV</h2>
+                <div class="card">
+                    <p><span class="highlight">BTS สถานีเพลินจิต ทางออก 2</span></p>
+                    <p> เดินทางด้วยรถไฟฟ้า BTS สายสีเขียวอ่อน ลงที่สถานีเพลินจิต ออกทางออกที่ 2 จากนั้นเดินมา <span class="highlight">รอรถ shuttle EV ที่ป้ายรถเมล์หน้ามหาทุนพลาซ่า</span></p>
+                    <p><span class="highlight">การบริการรถรับส่ง:</span></p>
+                    <p>• รถบริการฟรีทุก ๆ 15 นาที ไปถึงจุดรับส่งที่ชั้น G The Storey ของ One Bangkok</p>
+                    <p>• วันจันทร์ถึงศุกร์ ตั้งแต่เวลา 7.00 - 22.00 น.</p>
+                    <p>• วันเสาร์อาทิตย์ ตั้งแต่เวลา 9.00 - 23.00 น.</p>
+                    
+                    <button class="btn" onclick="toggleImage('img-bts-map')">ดูแผนที่สถานี BTS</button>
+                    <!-- รวมสองรูปไว้ในการกดปุ่มเดียวเรียบร้อยครับ -->
+                    <button class="btn" onclick="toggleImage('img-bts-shuttle-flow')">ดูจุดรับส่ง Shuttle EV </button>
+                    
+                    <div id="img-bts-map" class="image-panel">
+                        <div class="placeholder-text">[ 📸 วางลิงก์รูปแผนที่สถานี BTS ที่นี่ ]</div>
+                    </div>
+                    
+                    <div id="img-bts-shuttle-flow" class="image-panel">
+                        <div class="image-group">
+                            <div class="placeholder-text">[ 📸 รูปป้ายหน้ามหาทุนพลาซ่า (จุดรอรถ EV) ]</div>
+                            <div class="placeholder-text" style="margin-top: 10px;">[ 📸 รูปสิ้นสุดที่ One Bangkok ชั้น G The Storey ]</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PUBLIC BUS SECTION -->
+            <section id="bus">
+                <h2 class="section-title">รถโดยสารประจำทาง</h2>
+                <div class="card">
+                              <p>• ฝั่งถนนวิทยุ สาย 17, 50, 62, 76, 514, 2-28, A3</p>
+                    <p>• ฝั่งถนนพระราม 4 สาย 13, 22, 149, 205 (3-51)</p>
+                    
+                    <button class="btn" onclick="toggleImage('img-bus-stop')">ดูจุด bus stop</button>
+                    
+                    <div id="img-bus-stop" class="image-panel">
+                        <div class="placeholder-text">[ 📸 วางลิงก์รูปจุดจอดรถเมล์ที่นี่ ]</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- PERSONAL CAR SECTION -->
+            <section id="car">
+                <h2 class="section-title">รถยนต์ส่วนบุคคล</h2>
+                <div class="card">
+                    <p>มอเตอร์ไซค์และรถยนต์ส่วนบุคคลสามารถเข้าได้ทั้งทางฝั่งถนนวิทยุและถนนพระราม 4 </p>
+                    
+                    <button class="btn" onclick="toggleImage('img-car-entrance')">ทางเข้า</button>
+                    <a href="https://maps.google.com/?q=One+Bangkok" target="_blank" class="btn btn-gold">link to google map</a>
+                    
+                    <div id="img-car-entrance" class="image-panel">
+                        <div class="placeholder-text">[ 📸 วางลิงก์รูปภาพทางเข้าฝั่งถนนที่นี่ ]</div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- FOOTER WITH OFFICIAL LINK & CREDIT -->
+    <footer>
+        <p><strong style="color: var(--text-primary);">One Bangkok</strong></p>
+        <p>Wireless Road, Lumphini, Patumwan, Bangkok 10330 Thailand</p>
+        <p>+66 (0) 2 483 5555 <a href="mailto:contactcenter@onebangkok.com">contactcenter@onebangkok.com</a></p>
+        <p style="margin-top: 15px;">official website : <a href="https://www.onebangkok.com" target="_blank">www.onebangkok.com</a></p>
+        
+        <div class="developer-credit">
+            <p>developed by วรินทร ม.6/7 09208 </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
-<footer>Footer</footer>
-
 </html>
