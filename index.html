@@ -174,10 +174,16 @@
         }
 
         /* --- IMAGE PANEL --- */
+        /* Visible by default so previews and no-JS environments show images */
         .image-panel {
-            display: none; /* ซ่อนไว้เริ่มต้น */
+            display: block;
             margin-top: 20px;
             width: 100%;
+        }
+
+        /* Hidden state controlled by JS via the .hidden class */
+        .image-panel.hidden {
+            display: none;
         }
 
         .panel-img {
@@ -253,7 +259,7 @@
             <h1>วิธีเดินทางไป One Bangkok</h1>
             <button class="btn btn-gold" onclick="toggleImage('img-main-map')">แผนที่ภาพรวม</button>
             
-            <div id="img-main-map" class="image-panel">
+            <div id="img-main-map" class="image-panel hidden">
                 <div class="panel-inner">
                     <img src="images/Overview_map.webp" alt="Main Map" class="panel-img">
                 </div>
@@ -266,11 +272,11 @@
                 <h2 class="section-title">MRT</h2>
                 <div class="card">
                     <p><span class="highlight">MRT สถานีลุมพินี ทางออก 1</span></p>
-                    <p>เดินทางด้วยรถไฟฟ้ามหานคร (MRT สายสีน้ำเงิน) ลงที่สถานีลุมพินี ใช้ทางออกที่ 1 จะมีทางเชื่อมต่อเข้าสู่ One Bangkok โดยตรงเลย</p>
+                    <p>เดินทางด้วยรถไฟฟ้ามหานคร (MRT สายสีน้ำเงิน) ลงที่สถานีลุมพินี ใ�[...]</p>
                     
                     <button class="btn" onclick="toggleImage('img-mrt-map')">ดูแผนที่สถานี MRT</button>
                     
-                    <div id="img-mrt-map" class="image-panel">
+                    <div id="img-mrt-map" class="image-panel hidden">
                         <div class="panel-inner">
                             <img src="images/MRT_map.png" alt="MRT Map" class="panel-img">
                         </div>
@@ -282,7 +288,7 @@
                 <h2 class="section-title">BTS ต่อด้วย Shuttle EV</h2>
                 <div class="card">
                     <p><span class="highlight">BTS สถานีเพลินจิต ทางออก 2</span></p>
-                    <p>เดินทางด้วยรถไฟฟ้า BTS สายสีเขียวอ่อน ลงที่สถานีเพลินจิต ออกทางออกที่ 2 จากนั้นเดินมา <span class="highlight">รอรถ shuttle EV ที่ป้ายรถเมล์หน้ามหาทุนพลาซ่า</span></p>
+                    <p>เดินทางด้วยรถไฟฟ้า BTS สายสีเขียวอ่อน ลงที่สถานีเพลินจิต ออกทา[...]</p>
                     <p><span class="highlight">การบริการรถรับส่ง:</span></p>
                     <p>• รถบริการฟรีทุก ๆ 15 นาที ไปถึงจุดรับส่งที่ชั้น G The Storey ของ One Bangkok</p>
                     <p>• วันจันทร์ถึงศุกร์ ตั้งแต่เวลา 7.00 - 22.00 น.</p>
@@ -291,13 +297,13 @@
                     <button class="btn" onclick="toggleImage('img-bts-map')">ดูแผนที่สถานี BTS</button>
                     <button class="btn" onclick="toggleImage('img-bts-shuttle-flow')">ดูจุดรับส่ง Shuttle EV</button>
                     
-                    <div id="img-bts-map" class="image-panel">
+                    <div id="img-bts-map" class="image-panel hidden">
                         <div class="panel-inner">
                             <img src="images/BTS_map.png" alt="BTS Map" class="panel-img">
                         </div>
                     </div>
                     
-                    <div id="img-bts-shuttle-flow" class="image-panel">
+                    <div id="img-bts-shuttle-flow" class="image-panel hidden">
                         <div class="panel-inner">
                             <img src="images/EV_dropoff.webp" alt="EV Dropoff" class="panel-img">
                         </div>
@@ -313,7 +319,7 @@
                     
                     <button class="btn" onclick="toggleImage('img-bus-stop')">ดูจุด bus stop</button>
                     
-                    <div id="img-bus-stop" class="image-panel">
+                    <div id="img-bus-stop" class="image-panel hidden">
                         <div class="panel-inner">
                             <img src="images/Bus_stop.webp" alt="Bus Stop" class="panel-img">
                         </div>
@@ -324,12 +330,12 @@
             <section id="car">
                 <h2 class="section-title">รถยนต์ส่วนบุคคล</h2>
                 <div class="card">
-                    <p>มอเตอร์ไซค์และรถยนต์ส่วนบุคคลสามารถเข้าได้ทั้งทางฝั่งถนนวิทยุและถนนพระราม 4 </p>
+                    <p>มอเตอร์ไซค์และรถยนต์ส่วนบุคคลสามารถเข้าได้ทั้งทางฝั่งถนนว�[...]</p>
                     
                     <button class="btn" onclick="toggleImage('img-car-entrance')">ทางเข้า</button>
                     <a href="https://maps.google.com/?q=One+Bangkok" target="_blank" class="btn btn-gold">link to google map</a>
                     
-                    <div id="img-car-entrance" class="image-panel">
+                    <div id="img-car-entrance" class="image-panel hidden">
                         <div class="panel-inner">
                             <img src="images/Car_entrance.jpg" alt="Car Entrance" class="panel-img">
                         </div>
@@ -355,14 +361,8 @@
         function toggleImage(panelId) {
             const panel = document.getElementById(panelId);
             if (panel) {
-                // ดึงค่าการแสดงผลจริงที่บราวเซอร์เห็น ณ ตอนนั้น
-                const currentDisplay = window.getComputedStyle(panel).display;
-                
-                if (currentDisplay === "none") {
-                    panel.style.display = "block";
-                } else {
-                    panel.style.display = "none";
-                }
+                // Toggle the hidden class so display is controlled by CSS
+                panel.classList.toggle('hidden');
             }
         }
     </script>
