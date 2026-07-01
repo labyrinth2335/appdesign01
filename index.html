@@ -19,8 +19,8 @@
         }
 
         :root {
-            --bg-main: #050a18;        /* น้ำเงินเข้มจัด โทนมืดเย็น */
-            --bg-card: #0d1527;        /* น้ำเงินเทาเข้มสำหรับกล่องเนื้อหา */
+            --bg-main: #050a18;        
+            --bg-card: #0d1527;       
             --bg-nav: rgba(5, 10, 24, 0.9);
             --text-primary: #ffffff;   
             --text-secondary: #a0aec0; 
@@ -174,14 +174,12 @@
         }
 
         /* --- IMAGE PANEL --- */
-        /* Visible by default so previews and no-JS environments show images */
         .image-panel {
             display: block;
             margin-top: 20px;
             width: 100%;
         }
 
-        /* Hidden state controlled by JS via the .hidden class */
         .image-panel.hidden {
             display: none;
         }
@@ -191,6 +189,11 @@
             border-radius: 8px;
             border: 1px solid var(--border-color);
             object-fit: cover;
+        }
+        #img-main-map {
+            max-width: 500px; 
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* --- FOOTER STYLES --- */
